@@ -51,7 +51,7 @@ def download_and_save_data(league):
             save_dir = f'datasets/{league["name"]}'
             os.makedirs(save_dir, exist_ok=True)
             path_to_save = f'{save_dir}/season-{link.split("/")[-2]}.csv'
-            with open(path_to_save, 'w', newline='') as f:
+            with open(path_to_save, 'w', newline='', encoding='utf-8') as f:
                 writer = csv.writer(f, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
                 reader = csv.DictReader(data.splitlines())
                 # Write reordered header
